@@ -13,9 +13,6 @@ public class Book_Genre {
     private String id;
     private int genreId;
 
-    public Book_Genre() {
-    }
-
     public Book_Genre(String id, int genreId) {
         this.id = id;
         this.genreId = genreId;

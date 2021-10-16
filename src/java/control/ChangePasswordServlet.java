@@ -66,11 +66,11 @@ public class ChangePasswordServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String xUser,xPass,xNew;
+        
         UserDAO udao = new UserDAO();
-        xUser=request.getParameter("user");
-        xPass=request.getParameter("pass");
-        xNew=request.getParameter("changepass");
+        String xUser=request.getParameter("user");
+        String xPass=request.getParameter("pass");
+        String xNew=request.getParameter("changepass");
         User x = udao.getUser(xUser, xPass);
         if(x==null){
             x=udao.getUser(xUser);

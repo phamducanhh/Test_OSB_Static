@@ -41,7 +41,9 @@ public class Genre {
     
     public boolean isIn(List<Genre> lst){
         for (Genre genre : lst) {
-            if(genre.genreId==this.genreId) return true;
+            if(genre.genreId==this.genreId){
+                return true;
+            }
         }
         return false;
     }

@@ -52,7 +52,9 @@ public class FilterManageServlet extends HttpServlet {
             List<Book> listTop = bdao.getBSellerBook();
             String url = "filterManage?page=" + currentPage;
             String temp = "";
-            if(arr==null) temp+="no filter";
+            if(arr==null) {
+                temp+="no filter";
+            }
             else{
                 String genreName[] = new String[arr.length];
                 for (int i = 0; i < arr.length; i++) {

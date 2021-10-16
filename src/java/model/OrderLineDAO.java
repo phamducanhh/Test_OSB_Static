@@ -15,7 +15,6 @@ import java.util.List;
 public class OrderLineDAO extends MyDAO{
 
     public OrderLine getOrderLineByBookId(List<OrderLine> order, String id){
-        BookDAO bdao = new BookDAO();
         for (OrderLine orderLine : order) {
             if(orderLine.getBook().getId().equals(id)) return orderLine;
         }

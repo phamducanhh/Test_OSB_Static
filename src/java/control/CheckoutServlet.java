@@ -26,7 +26,7 @@ import model.OrderLineDAO;
  *
  * @author Admin
  */
-public class checkoutServlet extends HttpServlet {
+public class CheckoutServlet extends HttpServlet {
 
     protected boolean isTel(String input){
         for (int i = 0; i < input.length(); i++) {

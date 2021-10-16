@@ -6,7 +6,6 @@
 package model;
 
 import entity.Author;
-import java.sql.SQLException;
 
 /**
  *

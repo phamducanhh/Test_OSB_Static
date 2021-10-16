@@ -41,7 +41,6 @@ public class FilterServlet extends HttpServlet {
             throws ServletException, IOException {
         try {
             response.setContentType("text/html;charset=UTF-8");
-            PrintWriter pr = response.getWriter();
             String arr[] = request.getParameterValues("checkCate");
             BookDAO bdao = new BookDAO();
             GenreDAO gdao = new GenreDAO();
@@ -56,7 +55,7 @@ public class FilterServlet extends HttpServlet {
             int currentPage;
             try {
                 currentPage = Integer.parseInt(request.getParameter("page"));
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 currentPage = 1;
             }
             String url = "filter?page=" + currentPage;

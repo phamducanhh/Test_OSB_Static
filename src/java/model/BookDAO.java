@@ -24,17 +24,16 @@ public class BookDAO extends MyDAO {
         try {
             ps = con.prepareStatement(xSql);
             rs = ps.executeQuery();
-            String id, name, image, authorId, publisherId, description;
-            float price;
+            
             Book book;
             while (rs.next()) {
-                id = rs.getString("id");
-                name = rs.getString("name");
-                image = rs.getString("image");
-                authorId = rs.getString("authorId");
-                publisherId = rs.getString("publisherId");
-                description = rs.getString("description");
-                price = rs.getFloat("price");
+                String id = rs.getString("id");
+                String name = rs.getString("name");
+                String image = rs.getString("image");
+                String authorId = rs.getString("authorId");
+                String publisherId = rs.getString("publisherId");
+                String description = rs.getString("description");
+                float price = rs.getFloat("price");
                 book = new Book(id, name, image, authorId, publisherId, description, price);
                 list.add(book);
             }
@@ -98,7 +97,7 @@ public class BookDAO extends MyDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return (list);
+        return list;
     }
 
     public List<Book> getBSellerBook() {
@@ -203,19 +202,17 @@ public class BookDAO extends MyDAO {
             ps.setString(1, Integer.toString(arr.length));
         }
         try {
-            rs = ps.executeQuery();
-            String id, name, image, authorId, publisherId, description;
-            float price;
+            rs = ps.executeQuery();            
             Book book;
             while (rs.next()) {
-                id = rs.getString("id");
+                String id = rs.getString("id");
                 if (!isDuplicate(list, id)) {
-                    name = rs.getString("name");
-                    image = rs.getString("image");
-                    authorId = rs.getString("authorId");
-                    publisherId = rs.getString("publisherId");
-                    description = rs.getString("description");
-                    price = rs.getFloat("price");
+                    String name = rs.getString("name");
+                    String image = rs.getString("image");
+                    String authorId = rs.getString("authorId");
+                    String publisherId = rs.getString("publisherId");
+                    String description = rs.getString("description");
+                    float price = rs.getFloat("price");
                     book = new Book(id, name, image, authorId, publisherId, description, price);
                     list.add(book);
                 }
@@ -234,17 +231,15 @@ public class BookDAO extends MyDAO {
         try {
             ps = con.prepareStatement(xSql);
             ps.setString(1, authorId);
-            rs = ps.executeQuery();
-            String id, name, image, publisherId, description;
-            float price;
+            rs = ps.executeQuery();           
             Book book;
             while (rs.next()) {
-                id = rs.getString("id");
-                name = rs.getString("name");
-                image = rs.getString("image");
-                publisherId = rs.getString("publisherId");
-                description = rs.getString("description");
-                price = rs.getFloat("price");
+                String id = rs.getString("id");
+                String name = rs.getString("name");
+                String image = rs.getString("image");
+                String publisherId = rs.getString("publisherId");
+                String description = rs.getString("description");
+                float price = rs.getFloat("price");
                 book = new Book(id, name, image, authorId, publisherId, description, price);
                 list.add(book);
             }
@@ -312,7 +307,7 @@ public class BookDAO extends MyDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return (list);
+        return list;
     }
 
     public void deleteBook(String id) {

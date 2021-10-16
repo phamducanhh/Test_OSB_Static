@@ -50,12 +50,12 @@ public class Book_GenreDAO extends MyDAO{
     }
     public void updateGenreOfBook(String xId, String[] arr) {
         deleteGenreOfBook(xId);
-        for (int i = 0; i < arr.length; i++) {
+        for (String arr1 : arr) {
             xSql = "INSERT INTO Book_Genre([id],[GenreId]) VALUES (?,?);";
-            try{
+            try {
                 ps = con.prepareStatement(xSql);
                 ps.setString(1, xId);
-                ps.setString(2, arr[i]);
+                ps.setString(2, arr1);
                 ps.executeUpdate();
                 ps.close();
             }catch(Exception e){

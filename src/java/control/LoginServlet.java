@@ -79,9 +79,8 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter pr = response.getWriter();
         HttpSession session = request.getSession();
-        String xUser,xPass;
-        xUser = request.getParameter("user");
-        xPass = request.getParameter("pass");
+        String xUser = request.getParameter("user");
+        String xPass = request.getParameter("pass");
         UserDAO udao = new UserDAO();
         User x = udao.getUser(xUser,xPass);
         if(x==null){
